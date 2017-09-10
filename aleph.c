@@ -87,10 +87,10 @@ void akteb(char *katba, char loun)
 		*alephim = *katba;
 
 		*alephim++;
-		*katba++;
+	  *katba++;
 
 		*alephim = loun;
-		*alephim++;
+	  *alephim++;
 		//Même chose que la fonction ktab mais on ne se soucie pas des retours à la ligne
 	}
 }
@@ -101,10 +101,11 @@ unsigned char tawshin()
   do {
     yod = inb(0x64);
   } while ((yod & 0x01) == 0);
-  yod = inb(0x60);
+  yod = inb(0x60); //on stock l'input via le port 0x60
   return yod;
-	//Lit l'input du clavier
+  //Lit l'input du clavier
 }
+
 
 unsigned char sayen(){
   char het = 0;

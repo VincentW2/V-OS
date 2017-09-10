@@ -1,6 +1,6 @@
 #define KPRINT(x) ktab(x, 0x09);
 
-void kermit()
+void kermit() //fonction chargée en premier par boot.S
 {
   ktab("Pyralaph\n",'0');
   main();
@@ -8,7 +8,6 @@ void kermit()
 
 void main(void)
 {
-  int alm = 1;
   char yod;
   ktab("Lamed Samekh Daleth \n", 0x09);
   ktab("Gimel Yod Aleph \n", 0x09);

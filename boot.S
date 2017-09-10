@@ -16,7 +16,7 @@ _start:
 	dd magicnumber
 	dd flags
 	dd checksum
-	;; لاسحركم اذا غنيت
+
 
 	
 semkath:
