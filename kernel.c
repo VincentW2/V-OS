@@ -13,8 +13,7 @@ void main(void)
   ktab("Gimel Yod Aleph \n", 0x09);
   KPRINT("Taw Lamed Koph \n");
   while(1){
-    Koph();
-    
+      Koph(); //Lit et affiche l'input du clavier    
   }
  
 
