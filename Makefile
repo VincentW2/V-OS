@@ -3,7 +3,7 @@ CCFLAGS = -c -w --std=gnu89
 ASM = nasm
 LD = ld
 LDARCH = elf_i386
-LAZM = aleph.o keyboard.o
+LAZM = functions.o keyboard.o
 
 
 pyralaph.elf : $(LAZM) kernel.o linker.ld boot.elf

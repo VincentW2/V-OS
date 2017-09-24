@@ -5,7 +5,7 @@
 _start:
 	
 	mov esp, stack_space
-	jmp semkath
+	jmp semkath 		; (semkath = la fonction qui va appeler la fonction principale)
 	align 8
 
 	
@@ -20,6 +20,7 @@ _start:
 
 	
 semkath:
+	;; kermit = fonction principale
 	extern kermit
 	call kermit
 	cli
@@ -31,4 +32,4 @@ semkath:
 	
 stack_space:
 
-
+	;; réservé au stack
