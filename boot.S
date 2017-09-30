@@ -32,4 +32,3 @@ semkath:
 	
 stack_space:
 
-	;; réservé au stack
