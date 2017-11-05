@@ -4,31 +4,20 @@
 
 _start:
 	
-	mov esp, stack_space
-	jmp semkath 		; (semkath = la fonction qui va appeler la fonction principale)
-	align 8
-
+	jmp main_load 		; main_load va appeler la fonction principale
+	align 32
 	
 	flags equ 0x00
 	checksum equ - (0x1BADB002 + flags)
 	magicnumber equ 0x1BADB002
+
+	;; Multiboot headers
 	
 	dd magicnumber
 	dd flags
 	dd checksum
-
-
 	
-semkath:
-	;; kermit = fonction principale
-	extern kermit
-	call kermit
-	cli
-	hlt
-	
-	section .bss
-	rest 870
+main_load:
 
-	
-stack_space:
-
+	extern main
+	call main
