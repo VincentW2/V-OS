@@ -6,7 +6,7 @@ void main(void) //fonction chargée en premier par boot.S
     
     int sh = 1;
 
-    while(sh){
+    while(sh == 1){
 	shell(0x07);
     }
     

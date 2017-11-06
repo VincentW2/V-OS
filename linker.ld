@@ -3,7 +3,8 @@ ENTRY(_start)
 
 SECTIONS
 {
-	. = 1M;
+	. = 128;
+	
    .text : { *(.text) }
    .data : { *(.data) }
    .bss  : { *(.bss)  }
