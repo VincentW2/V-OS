@@ -15,4 +15,4 @@ pyralaph.elf : $(LAZM) kernel.o linker.ld boot.elf
 boot.elf : boot.S
 	$(ASM) -f elf32 boot.S -o boot.elf
 clean:
-	rm *.o *.elf *.iso
+	rm *.o *.elf *.iso iso/boot/*.elf

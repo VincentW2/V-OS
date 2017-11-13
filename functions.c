@@ -21,10 +21,10 @@ void free_all_vram()
 	//la même que plus haut, mais pour l'intégralité de la vram
 }
 
-volatile char *video_ram = (volatile char*)0xB8500;  //plusieurs octets après l'emplacement de la VRAM, pour laisser la place au msg du BIOS
-volatile char *video_ram_b = (volatile char*)0xB8000; //à partir de l'emplacement de la VRAM
+volatile char *video_ram = (volatile char*)0xB8000; 
 
-int hsb_tani = SCREEN_LINES -8;
+
+int hsb_tani = SCREEN_LINES;
 int hsb = LINE_SIZE;
 int hsbari = 0;
 void ktab(char *katba, char loun)
@@ -36,18 +36,18 @@ void ktab(char *katba, char loun)
 
     while (*katba != 0){
 	if (*katba != '\n') {
-	    *video_ram_b = *katba; //on met la lettre ascii dans l'emplacement associé
+	    *video_ram = *katba; //on met la lettre ascii dans l'emplacement associé
         }
 
-	*video_ram_b++;
+	*video_ram++;
 		
-     	*video_ram_b = loun; //on met la valeur de la couleur dans l'emplacement associé
+     	*video_ram = loun; //on met la valeur de la couleur dans l'emplacement associé
 
 	if (*katba != '\n') {
-	    *video_ram_b++; // on réavance dans la mémoire, l'emplacement alors actuel étant réservé à la couleur
+	    *video_ram++; // on réavance dans la mémoire, l'emplacement alors actuel étant réservé à la couleur
 	}
 	if (*katba == '\n') {
-	    video_ram_b += hsb*2+1; //s'il y a retour à la ligne on avance de sorte à compter tous les emplacements qu'on a laissé vides
+	    video_ram += hsb*2+1; //s'il y a retour à la ligne on avance de sorte à compter tous les emplacements qu'on a laissé vides
 	    hsb = LINE_SIZE;
 	    hsb_tani--;
 
@@ -62,12 +62,8 @@ void ktab(char *katba, char loun)
 	    free_all_vram();
 	    hsbari++;
 
-	    if (hsbari == 0){
-		hsb_tani = SCREEN_LINES -8;
-	    }
-	    if (hsbari > 0){
-		hsb_tani = SCREEN_LINES -4;
-	    }
+	    hsb_tani = SCREEN_LINES;
+
 	}
 
 	if (hsb < 0) {
@@ -92,13 +88,13 @@ void akteb(char *katba, char loun)
     
     extern volatile char *video_ram_b;
     while (*katba != 0){
-	*video_ram_b = *katba;
+	*video_ram = *katba;
 
-        *video_ram_b++;
+        *video_ram++;
 	*katba++;
 
-	*video_ram_b = loun;
-	*video_ram_b++;
+	*video_ram = loun;
+	*video_ram++;
 		//Même chose que la fonction ktab mais on ne se soucie pas des retours à la ligne
 
     }

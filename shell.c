@@ -40,9 +40,10 @@ void shell(char loun)
     
     
     
-	//ktab(str[ltr], 0x07);
+//	ktab(str[ltr], 0x07);
 	ktab("\n", 0x07);
 	ktab("gerga3 >", 0x09);
+	
 	break;
 
 	
