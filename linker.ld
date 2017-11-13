@@ -3,8 +3,6 @@ ENTRY(_start)
 
 SECTIONS
 {
-	. = 128;
-	
    .text : { *(.text) }
    .data : { *(.data) }
    .bss  : { *(.bss)  }

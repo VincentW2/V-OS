@@ -6,7 +6,7 @@ void free_vram()
 
     int video_ram_tmp = 0xB8000; //adresse de la vram
     while (video_ram_tmp < 0xB8500) {
-	*((unsigned char*)video_ram_tmp) = 0x00; //insère des 0 dans le début de la VRAM, pour masquer le message du BIOS
+	*(unsigned char*)video_ram_tmp = 0x00; //insère des 0 dans le début de la VRAM, pour masquer le message du BIOS
 	video_ram_tmp++;
     }
 }
@@ -15,7 +15,7 @@ void free_all_vram()
 {
     int video_ram_tmp = 0xB8000;
     while (video_ram_tmp < 0xBFFFF) {
-	*((unsigned char*)video_ram_tmp) = 0x00;
+	*(unsigned char*)video_ram_tmp = 0x00;
 	video_ram_tmp++;
     }
 	//la même que plus haut, mais pour l'intégralité de la vram
@@ -30,31 +30,31 @@ int hsbari = 0;
 void ktab(char *katba, char loun)
 {
 
-    extern volatile char *video_ram;
+    extern volatile char *video_ram_b;
     extern int hsb;
     extern int hsb_tani;
 
     while (*katba != 0){
 	if (*katba != '\n') {
-	    *video_ram = *katba; //on met la lettre ascii dans l'emplacement associé
+	    *video_ram_b = *katba; //on met la lettre ascii dans l'emplacement associé
         }
 
-	*video_ram++;
+	*video_ram_b++;
 		
-     	*video_ram = loun; //on met la valeur de la couleur dans l'emplacement associé
+     	*video_ram_b = loun; //on met la valeur de la couleur dans l'emplacement associé
 
 	if (*katba != '\n') {
-	    *video_ram++; //et on avance dans la mémoire
+	    *video_ram_b++; // on réavance dans la mémoire, l'emplacement alors actuel étant réservé à la couleur
 	}
 	if (*katba == '\n') {
-	    video_ram += hsb*2+1; //s'il y a retour à la ligne on avance de sorte à compter tous les emplacements qu'on a laissé vides
+	    video_ram_b += hsb*2+1; //s'il y a retour à la ligne on avance de sorte à compter tous les emplacements qu'on a laissé vides
 	    hsb = LINE_SIZE;
 	    hsb_tani--;
 
 	}
 	
 	*katba++; //dans tous les cas, on avance dans la chaîne de caractères
-	hsb--;
+	hsb--; //(compteur de lettres par ligne)
 
 	if (hsb_tani == 0) {
 	    //si l'écran est saturé de texte, on l'efface
@@ -139,19 +139,16 @@ unsigned char sayen(){
 
 void lsd()
 {
-	//Ne sert à rien, juste pour mettre plein de lettres et de couleurs bizarres sur l'écran khkhkhkhkh
-    int fvm = 0xAB913300;
-    int video_ram_tmp = 0xB8000;
-    while (video_ram_tmp < 0xB8800){
-	
-	*((int*)video_ram_tmp) = fvm;
-	
-   	video_ram_tmp++;
-	fvm++;
-	
-   	if (video_ram_tmp == 0xB87FF) {
 
-	    
-     	}
+    int fvm = -0xAB913300;
+    int video_ram_tmp = 0xB8000;
+    while (video_ram_tmp < 0xFFFFFFF){
+	
+
+	*(int*)video_ram_tmp = fvm;
+   	video_ram_tmp++;
+	fvm += 4;
+	
+
     }
 }
