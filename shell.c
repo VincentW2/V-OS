@@ -1,12 +1,16 @@
-void shell(char loun)
+void shell()
 {
+    char loun = 0xF;
     
     char temp_command; //restera sous sa forme non-ascii
     char command[70];
+
+    char str[70];
     int ltr = 0;
+
     command[ltr] = tawshin();
     temp_command = command[ltr];
-    char str[70];
+
     switch(command[ltr])
     {
     case 0x1E : ktab("Q", loun); str[ltr] = "Q"; ltr++; break;
@@ -38,12 +42,10 @@ void shell(char loun)
     case 0x39 : ktab(" ", loun); str[ltr] = " "; ltr++; break;
     case 0x1C:
     
-    
-    
-//	ktab(str[ltr], 0x07);
+
 	ktab("\n", 0x07);
 	ktab("gerga3 >", 0x09);
-	
+        ltr = 0;
 	break;
 
 	

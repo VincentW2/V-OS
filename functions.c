@@ -1,6 +1,6 @@
-#define FVM 0xAB913300
 #define LINE_SIZE 80
 #define SCREEN_LINES 25
+
 void free_vram()
 {
 
@@ -21,19 +21,15 @@ void free_all_vram()
 	//la même que plus haut, mais pour l'intégralité de la vram
 }
 
-volatile char *video_ram = (volatile char*)0xB8000; 
+char *video_ram = (char*)0xB8000; 
 
 
 int hsb_tani = SCREEN_LINES;
 int hsb = LINE_SIZE;
-int hsbari = 0;
+
 void ktab(char *katba, char loun)
 {
-
-    extern volatile char *video_ram_b;
-    extern int hsb;
-    extern int hsb_tani;
-
+    
     while (*katba != 0){
 	if (*katba != '\n') {
 	    *video_ram = *katba; //on met la lettre ascii dans l'emplacement associé
@@ -46,11 +42,11 @@ void ktab(char *katba, char loun)
 	if (*katba != '\n') {
 	    *video_ram++; // on réavance dans la mémoire, l'emplacement alors actuel étant réservé à la couleur
 	}
+	
 	if (*katba == '\n') {
 	    video_ram += hsb*2+1; //s'il y a retour à la ligne on avance de sorte à compter tous les emplacements qu'on a laissé vides
 	    hsb = LINE_SIZE;
 	    hsb_tani--;
-
 	}
 	
 	*katba++; //dans tous les cas, on avance dans la chaîne de caractères
@@ -58,9 +54,9 @@ void ktab(char *katba, char loun)
 
 	if (hsb_tani == 0) {
 	    //si l'écran est saturé de texte, on l'efface
-	    video_ram = 0xB8000;
 	    free_all_vram();
-	    hsbari++;
+
+	    video_ram = 0xB8000;
 
 	    hsb_tani = SCREEN_LINES;
 
@@ -68,16 +64,13 @@ void ktab(char *katba, char loun)
 
 	if (hsb < 0) {
 	    hsb = LINE_SIZE;
-
 	}
     }
 }
 
 void backline (void)
 {
-    extern int hsb;
-    extern volatile char *video_ram;
-
+    
     video_ram += hsb*2 +1;
     hsb = LINE_SIZE;
     //pour revenir à la ligne manuellement, même code que plus haut
@@ -86,7 +79,7 @@ void backline (void)
 void akteb(char *katba, char loun)
 {
     
-    extern volatile char *video_ram_b;
+
     while (*katba != 0){
 	*video_ram = *katba;
 
@@ -135,16 +128,14 @@ unsigned char sayen(){
 
 void lsd()
 {
-
-    int fvm = -0xAB913300;
+    int fvm = 0xCB411234;
     int video_ram_tmp = 0xB8000;
-    while (video_ram_tmp < 0xFFFFFFF){
+    while (video_ram_tmp < 0xBFFFF){
 	
 
 	*(int*)video_ram_tmp = fvm;
    	video_ram_tmp++;
-	fvm += 4;
-	
+	fvm++;
 
     }
 }

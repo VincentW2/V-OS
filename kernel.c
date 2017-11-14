@@ -6,13 +6,16 @@ void main(void) //fonction chargée en premier par boot.S
    
     ktab("gerga3 >", 0x09);
     
-    int sh = 1;
- 
 
-     while(sh == 1){
-	 shell(0xF);
-     }
-    
+    char str[70];
+    int ltr = 0;
+
+    //  while(1){
+//	 shell();
+//    }
+
+   
+    lsd();
 }
 
 
