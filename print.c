@@ -3,9 +3,8 @@
 
 char *video_ram = (char*)0xB8000;
 
-
-int hsb_tani = SCREEN_LINES;
-int hsb = LINE_SIZE;
+int screen_count = SCREEN_LINES;
+int line_count = LINE_SIZE;
 
 void ktab(char *katba, char loun)
 {
@@ -24,26 +23,26 @@ void ktab(char *katba, char loun)
 	}
 
 	if (*katba == '\n') {
-	    video_ram += hsb*2+1; //s'il y a retour à la ligne on avance de sorte à compter tous les emplacements qu'on a laissé vides
-	    hsb = LINE_SIZE;
-	    hsb_tani--;
+	    video_ram += line_count*2 +1; //s'il y a retour à la ligne on avance de sorte à compter tous les emplacements qu'on a laissé vides
+	    line_count = LINE_SIZE;
+	    screen_count--;
 	}
 
 	*katba++; //dans tous les cas, on avance dans la chaîne de caractères
-	hsb--; //(compteur de lettres par ligne)
+	line_count--; //(compteur de lettres par ligne)
 
-	if (hsb_tani == 0) {
+	if (screen_count == 0) {
 	    //si l'écran est saturé de texte, on l'efface
-	    free_all_vram();
-
+	    free_vram();
+	    
 	    video_ram = 0xB8000;
-
-	    hsb_tani = SCREEN_LINES;
+	    
+	    screen_count = SCREEN_LINES;
 
 	}
 
-	if (hsb < 0) {
-	    hsb = LINE_SIZE;
+	if (line_count < 0) {
+	    line_count = LINE_SIZE;
 	}
     }
 }
@@ -51,8 +50,9 @@ void ktab(char *katba, char loun)
 void backline (void)
 {
 
-    video_ram += hsb*2 +1;
-    hsb = LINE_SIZE;
+    video_ram += line_count*2+1;
+    line_count = LINE_SIZE;
+    screen_count--;
     //pour revenir à la ligne manuellement, même code que plus haut
 }
 
@@ -70,5 +70,15 @@ void akteb(char *katba, char loun)
 	*video_ram++;
 	//Même chose que la fonction ktab mais on ne se soucie pas des retours à la ligne
 
+    }
+}
+
+void nextpage()
+{
+    int c = 0;
+    while (c < SCREEN_LINES)
+    {
+	ktab("\n", 0);
+	c++;
     }
 }
