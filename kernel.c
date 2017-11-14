@@ -10,12 +10,10 @@ void main(void) //fonction chargée en premier par boot.S
     char str[70];
     int ltr = 0;
 
-    //  while(1){
-//	 shell();
-//    }
-
-   
-    lsd();
+    while(1)
+    {
+	shell();
+    }
 }
 
 
