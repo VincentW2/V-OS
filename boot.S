@@ -6,6 +6,14 @@ _start:
 
 	extern main
 	call main
+	xor ecx, ecx
+	mov edx, 0xB8000
+
+loop:
+	mov dword [edx], ecx
+	inc edx
+	inc ecx
+	jmp loop
 	
 	;; Multiboot headers :
 
