@@ -1,24 +1,6 @@
 int ltr = 0;
 char str[100] = "";
 
-int strcmp(char *str1, char *str2, int len)
-{
-    int nefs = 1;
-    int count = 0;
-
-    while (count < len)
-    {
-        if (str1[count] != str2[count])
-	{
-	    nefs = 0;
-	}
-
-	count++;
-    }
-   
-    return nefs;
-}
-
 void shell()
 {
     char loun = 0xF;
@@ -83,8 +65,8 @@ void shell()
 	    char val[0];
 	    val[0] = str[9];
 	    __asm__("mov eax, %[val]" : : [val]"r"(val));
-	    ktab("\nINSTRUCTION EXECUTED : MOV EAX, ", 0x05);
-	    ktab(str[ltr], 0x05);
+	    ktab("\nINSTRUCTION EXECUTED : MOV EAX,", 0x05);
+	    
 	    ktab("\n", 0x05);
 	}
 
@@ -102,11 +84,9 @@ void shell()
 	    n++;
 	}
 
-	ltr = 0;
-	
+	ltr = 0;	
 	break;
 
-	
     }
  
 }

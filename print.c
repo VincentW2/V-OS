@@ -75,10 +75,10 @@ void akteb(char *katba, char loun)
 
 void nextpage()
 {
-    int c = 0;
-    while (c < SCREEN_LINES)
+    int l = 0;
+    while (l < SCREEN_LINES)
     {
 	ktab("\n", 0);
-	c++;
+	l++;
     }
 }

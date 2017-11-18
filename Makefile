@@ -3,7 +3,7 @@ CCFLAGS = -c -w -masm=intel
 ASM = nasm
 LD = ld
 LDARCH = elf_i386
-LAZM = vram.o shell.o keyboard.o print.o lsd.o
+LAZM = vram.o shell.o keyboard.o print.o lsd.o str.o
 
 
 pyralaph.elf : $(LAZM) kernel.o linker.ld boot.elf
