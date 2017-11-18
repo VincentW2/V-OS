@@ -76,3 +76,20 @@ void strqsm(char *str, int word, char *output)
 
     output[count2-1] = '\0';
 }
+
+int toint(char str[]) {
+    int ch;
+    int nb2;
+    int n;
+
+    ch = 0;
+    n = 0;
+
+    while (str[ch] != '\0')
+    {
+	n = n * 10 + str[ch] - '0';
+	ch++;
+    }
+
+    return n;
+}

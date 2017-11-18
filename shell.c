@@ -64,18 +64,28 @@ void shell()
 	if (strcmp(str, "MOV EAX,", 8))
 	{
 	    char val[100];
+	    int src;
 	    strqsm(str, 3, val);
-	    __asm__("mov eax, %[val]" : : [val]"r"(val));
+	    src = toint(val);
+	    __asm__("mov eax, %[src]" : : [src]"r"(src));
 	    ktab("moved ", 0x05);
 	    ktab(val, 0x05);
 	    ktab(" to EAX register\n", 0x05);
+	    ktab("gerga3 >", 0x09);
 	}
 
 	if (strcmp(str, "JMP", 3))
 	{
-	    char val[0];
-	    val[0] = str[5];
-	    __asm__("jmp %[val]" : : [val]"r"(val));
+	    char val[100];
+	    int src;
+	    strqsm(str, 2, val);
+	    src = toint(val);
+      
+	    __asm__("jmp %[src]" : : [src]"r"(src));
+
+	    ktab("jumped to ", 0x05);
+	    ktab(val, 0x05);
+	    ktab("gerga3 >", 0x09);
 	    
 	}
 
