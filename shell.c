@@ -5,7 +5,8 @@ void shell()
 {
     char loun = 0xF;
     char command[100];
-   
+
+    char output[100];
    
     command[ltr] = tawshin();
     
@@ -62,12 +63,12 @@ void shell()
 
 	if (strcmp(str, "MOV EAX,", 8))
 	{
-	    char val[0];
-	    val[0] = str[9];
+	    char val[100];
+	    strqsm(str, 3, val);
 	    __asm__("mov eax, %[val]" : : [val]"r"(val));
-	    ktab("\nINSTRUCTION EXECUTED : MOV EAX,", 0x05);
-	    
-	    ktab("\n", 0x05);
+	    ktab("moved ", 0x05);
+	    ktab(val, 0x05);
+	    ktab(" to EAX register\n", 0x05);
 	}
 
 	if (strcmp(str, "JMP", 3))
