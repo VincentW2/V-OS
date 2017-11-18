@@ -89,6 +89,11 @@ void shell()
 	    
 	}
 
+	if (strcmp(str, "LSD", 3))
+	{
+	    lsd();
+	}
+
 	while (n < 100)
 	{
 	    str[n] = 0;
