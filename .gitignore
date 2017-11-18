@@ -8,6 +8,7 @@
 *.elc
 *.txt
 *.elf
+*/.elf
 *.bin
 *.iso
 *.o
