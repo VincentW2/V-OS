@@ -12,32 +12,32 @@ void shell()
     
     switch(command[ltr])
     {
-    case 0x1E : ktab("Q", loun); str[ltr] = 'Q'; ltr++; break;
-    case 0x30 : ktab("B", loun); str[ltr] = 'B'; ltr++; break;
-    case 0x2E : ktab("C", loun); str[ltr] = 'C'; ltr++; break;
-    case 0x20 : ktab("D", loun); str[ltr] = 'D'; ltr++; break;
-    case 0x12 : ktab("E", loun); str[ltr] = 'E'; ltr++; break;
-    case 0x21 : ktab("F", loun); str[ltr] = 'F'; ltr++; break;
-    case 0x22 : ktab("G", loun); str[ltr] = 'G'; ltr++; break;
-    case 0x23 : ktab("H", loun); str[ltr] = 'H'; ltr++; break;
-    case 0x17 : ktab("I", loun); str[ltr] = 'I'; ltr++; break;
-    case 0x24 : ktab("J", loun); str[ltr] = 'J'; ltr++; break;
-    case 0x25 : ktab("K", loun); str[ltr] = 'K'; ltr++; break;
-    case 0x26 : ktab("L", loun); str[ltr] = 'L'; ltr++; break;
-    case 0x27 : ktab("M", loun); str[ltr] = 'M'; ltr++; break;
-    case 0x31 : ktab("N", loun); str[ltr] = 'N'; ltr++; break;
-    case 0x18 : ktab("O", loun); str[ltr] = 'O'; ltr++; break;
-    case 0x19 : ktab("P", loun); str[ltr] = 'P'; ltr++; break;
-    case 0x10 : ktab("A", loun); str[ltr] = 'A'; ltr++; break;
-    case 0x13 : ktab("R", loun); str[ltr] = 'R'; ltr++; break;
-    case 0x1F : ktab("S", loun); str[ltr] = 'S'; ltr++; break;
-    case 0x14 : ktab("T", loun); str[ltr] = 'T'; ltr++; break;
-    case 0x16 : ktab("U", loun); str[ltr] = 'U'; ltr++; break;
-    case 0x2F : ktab("V", loun); str[ltr] = 'V'; ltr++; break;
-    case 0x11 : ktab("Z", loun); str[ltr] = 'Z'; ltr++; break;
-    case 0x2D : ktab("X", loun); str[ltr] = 'X'; ltr++; break;
-    case 0x15 : ktab("Y", loun); str[ltr] = 'Y'; ltr++; break;
-    case 0x2C : ktab("W", loun); str[ltr] = 'W'; ltr++; break;
+    case 0x1E : ktab("q", loun); str[ltr] = 'q'; ltr++; break;
+    case 0x30 : ktab("b", loun); str[ltr] = 'b'; ltr++; break;
+    case 0x2E : ktab("c", loun); str[ltr] = 'c'; ltr++; break;
+    case 0x20 : ktab("d", loun); str[ltr] = 'd'; ltr++; break;
+    case 0x12 : ktab("e", loun); str[ltr] = 'e'; ltr++; break;
+    case 0x21 : ktab("f", loun); str[ltr] = 'f'; ltr++; break;
+    case 0x22 : ktab("g", loun); str[ltr] = 'f'; ltr++; break;
+    case 0x23 : ktab("h", loun); str[ltr] = 'h'; ltr++; break;
+    case 0x17 : ktab("i", loun); str[ltr] = 'i'; ltr++; break;
+    case 0x24 : ktab("j", loun); str[ltr] = 'j'; ltr++; break;
+    case 0x25 : ktab("k", loun); str[ltr] = 'k'; ltr++; break;
+    case 0x26 : ktab("l", loun); str[ltr] = 'l'; ltr++; break;
+    case 0x27 : ktab("m", loun); str[ltr] = 'm'; ltr++; break;
+    case 0x31 : ktab("n", loun); str[ltr] = 'n'; ltr++; break;
+    case 0x18 : ktab("o", loun); str[ltr] = 'o'; ltr++; break;
+    case 0x19 : ktab("p", loun); str[ltr] = 'p'; ltr++; break;
+    case 0x10 : ktab("a", loun); str[ltr] = 'a'; ltr++; break;
+    case 0x13 : ktab("r", loun); str[ltr] = 'r'; ltr++; break;
+    case 0x1F : ktab("s", loun); str[ltr] = 's'; ltr++; break;
+    case 0x14 : ktab("t", loun); str[ltr] = 't'; ltr++; break;
+    case 0x16 : ktab("u", loun); str[ltr] = 'u'; ltr++; break;
+    case 0x2F : ktab("v", loun); str[ltr] = 'v'; ltr++; break;
+    case 0x11 : ktab("z", loun); str[ltr] = 'z'; ltr++; break;
+    case 0x2D : ktab("x", loun); str[ltr] = 'x'; ltr++; break;
+    case 0x15 : ktab("y", loun); str[ltr] = 'y'; ltr++; break;
+    case 0x2C : ktab("w", loun); str[ltr] = 'w'; ltr++; break;
     case 0x39 : ktab(" ", loun); str[ltr] = ' '; ltr++; break;
 
     case 0x02 : ktab("1", loun); str[ltr] = '1'; ltr++; break;
@@ -52,16 +52,18 @@ void shell()
     case 0x0B : ktab("0", loun); str[ltr] = '0'; ltr++; break;
     case 0x32 : ktab(",", loun); str[ltr] = ','; ltr++; break;
 	
+    case 0x3B : ktab("[", loun); str[ltr] = '['; ltr++; break;
+    case 0x44 : ktab("]", loun); str[ltr] = ']'; ltr++; break;
 	
 
-	
+       
     case 0x1C:
 
 	ktab("\n", 0x07);
 	ktab("gerga3 >", 0x09);
 	int n = 0;
 
-	if (strcmp(str, "MOV EAX,", 8))
+	if (strcmp(str, "mov eax,", 8))
 	{
 	    char val[100];
 	    int src;
@@ -74,7 +76,84 @@ void shell()
 	    ktab("gerga3 >", 0x09);
 	}
 
-	if (strcmp(str, "JMP", 3))
+	if (strcmp(str, "mov ebx,", 8))
+	{
+	    char val[100];
+	    int src;
+	    strqsm(str, 3, val);
+	    src = toint(val);
+	    __asm__("mov ebx, %[src]" : : [src]"r"(src));
+	    ktab("moved ", 0x05);
+	    ktab(val, 0x05);
+	    ktab(" to EBX register\n", 0x05);
+	    ktab("gerga3 >", 0x09);
+	}
+
+
+	if (strcmp(str, "mov ecx,", 8))
+	{
+	    char val[100];
+	    int src;
+	    strqsm(str, 3, val);
+	    src = toint(val);
+	    __asm__("mov ecx, %[src]" : : [src]"r"(src));
+	    ktab("moved ", 0x05);
+	    ktab(val, 0x05);
+	    ktab(" to ECX register\n", 0x05);
+	    ktab("gerga3 >", 0x09);
+	}
+
+	if (strcmp(str, "mov edx,", 8))
+	{
+	    char val[100];
+	    int src;
+	    strqsm(str, 3, val);
+	    src = toint(val);
+	    __asm__("mov edx, %[src]" : : [src]"r"(src));
+	    ktab("moved ", 0x05);
+	    ktab(val, 0x05);
+	    ktab(" to EDX register\n", 0x05);
+	    ktab("gerga3 >", 0x09);
+	}
+
+	if (strcmp(str, "mov [", 5))
+	{
+	    char val[100];
+	    char val2[100];
+	    
+	    int dest;
+	    int src;
+	    
+	    strqsm(str, 2, val);
+	    dest = numbers(val);
+
+	    strqsm(str, 3, val2);
+	    src = toint(val2);
+	    
+	    __asm__("mov [%[dest]], %[src]" : : [dest]"r"(dest), [src]"r"(src));
+	}
+
+	if (strcmp(str, "vram", 4))
+	{
+	    char val[100];
+	    char val2[100];
+	    
+	    int src;
+	    int dest;
+
+	    strqsm(str, 2, val);
+	    dest = numbers(val);
+
+	    strqsm(str, 3, val2);
+	    src = toint(val2);
+
+	    int vram_address = 0xB8000;
+	    vram_address += dest;
+
+	    __asm__("mov [%[vram_address]], %[src]" : : [vram_address]"r"(vram_address), [src]"r"(src));
+	}
+
+	if (strcmp(str, "jmp", 3))
 	{
 	    char val[100];
 	    int src;
@@ -89,10 +168,16 @@ void shell()
 	    
 	}
 
-	if (strcmp(str, "LSD", 3))
+	if (strcmp(str, "lsd", 4))
 	{
 	    lsd();
 	}
+
+	if(strcmp(str, "clear", 5))
+	{
+	    free_vram();
+	}
+	
 
 	while (n < 100)
 	{

@@ -79,7 +79,6 @@ void strqsm(char *str, int word, char *output)
 
 int toint(char str[]) {
     int ch;
-    int nb2;
     int n;
 
     ch = 0;
@@ -92,4 +91,32 @@ int toint(char str[]) {
     }
 
     return n;
+}
+
+int numbers(char str[]) {
+    int ch;
+    int ch2;
+    int n;
+    char newstr[100];
+
+    ch = 0;
+    ch2 = 0;
+    n = 0;
+
+    while (str[ch] != '\0')
+    {
+	if (str[ch] == '0' || str[ch] == '1' || str[ch] == '2' || str[ch] == '3' || str[ch] == '4' || str[ch] == '5' || str[ch] == '6' ||
+	    str[ch] == '7' || str[ch] == '8' || str[ch] == '9')
+	{
+	    newstr[ch2] = str[ch];
+	    ch2++;
+	    ch++;
+	}
+	else{
+	    ch++;
+	}
+	
+    }
+
+    return toint(newstr);
 }
