@@ -1,5 +1,6 @@
 void lsd()
 {
+    
     int video_ram = 0xB8000;
     int fvm = 0xAB111234;
     int n = 1;
