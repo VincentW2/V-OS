@@ -1,6 +1,6 @@
 CC = gcc
 CCFLAGS = -c -w -masm=intel
-ASM = nasm
+ASM = as
 LD = ld
 LDARCH = elf_i386
 LAZM = vram.o shell.o keyboard.o print.o lsd.o str.o
@@ -13,6 +13,6 @@ pyralaph.elf : $(LAZM) kernel.o linker.ld boot.elf
 %.o : %.c
 	$(CC) $(CCFLAGS) $<
 boot.elf : boot.S
-	$(ASM) -f elf32 boot.S -o boot.elf
+	$(ASM) boot.S -o boot.elf
 clean: 
 	rm *.o *.elf *.iso iso/boot/*.elf
