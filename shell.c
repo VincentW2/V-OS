@@ -159,8 +159,10 @@ void shell()
 	    int src;
 	    strqsm(str, 2, val);
 	    src = toint(val);
-      
+
 	    __asm__("jmp %[src]" : : [src]"r"(src));
+      
+
 
 	    ktab("jumped to ", 0x05);
 	    ktab(val, 0x05);
