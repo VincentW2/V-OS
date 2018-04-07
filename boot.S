@@ -14,11 +14,16 @@
 	.long 0x00000000
 	.long -0x1badb002
 
-	.lcomm stack 0x1000
 
+	mov esp, 0xdeadbeef
+	mov ebp, esp
+
+	sub esp, 0x100
 	call _start
 	
 _start:
+
+	
 	call main
 
 inp:

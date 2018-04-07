@@ -1,3 +1,4 @@
+
 int ltr = 0;
 char str[100] = "";
 
@@ -66,9 +67,9 @@ void shell()
 	if (strcmp(str, "mov eax,", 8))
 	{
 	    char val[100];
-	    int src;
+	    unsigned int src;
 	    strqsm(str, 3, val);
-	    src = toint(val);
+	    src = tohex(val);
 	    __asm__("mov eax, %[src]" : : [src]"r"(src));
 	    ktab("moved ", 0x05);
 	    ktab(val, 0x05);
@@ -79,9 +80,9 @@ void shell()
 	if (strcmp(str, "mov ebx,", 8))
 	{
 	    char val[100];
-	    int src;
+	    unsigned int src;
 	    strqsm(str, 3, val);
-	    src = toint(val);
+	    src = tohex(val);
 	    __asm__("mov ebx, %[src]" : : [src]"r"(src));
 	    ktab("moved ", 0x05);
 	    ktab(val, 0x05);
@@ -93,9 +94,9 @@ void shell()
 	if (strcmp(str, "mov ecx,", 8))
 	{
 	    char val[100];
-	    int src;
+	    unsigned int src;
 	    strqsm(str, 3, val);
-	    src = toint(val);
+	    src = tohex(val);
 	    __asm__("mov ecx, %[src]" : : [src]"r"(src));
 	    ktab("moved ", 0x05);
 	    ktab(val, 0x05);
@@ -106,9 +107,9 @@ void shell()
 	if (strcmp(str, "mov edx,", 8))
 	{
 	    char val[100];
-	    int src;
+	    unsigned int src;
 	    strqsm(str, 3, val);
-	    src = toint(val);
+	    src = tohex(val);
 	    __asm__("mov edx, %[src]" : : [src]"r"(src));
 	    ktab("moved ", 0x05);
 	    ktab(val, 0x05);
@@ -121,14 +122,14 @@ void shell()
 	    char val[100];
 	    char val2[100];
 	    
-	    int dest;
-	    int src;
+	    unsigned int dest;
+	    unsigned int src;
 	    
 	    strqsm(str, 2, val);
-	    dest = numbers(val);
+	    dest = tohex(val);
 
 	    strqsm(str, 3, val2);
-	    src = toint(val2);
+	    src = tohex(val2);
 	    
 	    __asm__("mov [%[dest]], %[src]" : : [dest]"r"(dest), [src]"r"(src));
 	}
@@ -142,10 +143,10 @@ void shell()
 	    int dest;
 
 	    strqsm(str, 2, val);
-	    dest = numbers(val);
+	    dest = tohex(val);
 
 	    strqsm(str, 3, val2);
-	    src = toint(val2);
+	    src = tohex(val2);
 
 	    int vram_address = 0xB8000;
 	    vram_address += dest;
@@ -158,7 +159,7 @@ void shell()
 	    char val[100];
 	    int src;
 	    strqsm(str, 2, val);
-	    src = toint(val);
+	    src = tohex(val);
 
 	    __asm__("jmp %[src]" : : [src]"r"(src));
       
@@ -169,6 +170,17 @@ void shell()
 	    ktab("gerga3 >", 0x09);
 	    
 	}
+
+	if (strcmp(str, "exec", 4))
+	  {
+	    unsigned int code;
+	    unsigned int val;
+	    strqsm(str, 2, val);
+	    code = tohex(val);
+	    __asm__("push %[code]" : : [code]"r"(code));
+	    __asm__("push 0x90909090");
+	    __asm__("jmp [esp]");
+	  }
 
 	if (strcmp(str, "lsd", 4))
 	{
