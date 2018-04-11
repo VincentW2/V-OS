@@ -191,7 +191,12 @@ void shell()
 	{
 	    free_vram();
 	}
+	  
 	
+	if(strcmp(str, "info", 5))
+	{
+	    printf("|d123");
+	}
 
 	while (n < 100)
 	{
