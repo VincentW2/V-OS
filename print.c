@@ -11,28 +11,28 @@ void ktab(char *katba, char loun)
 
     while (*katba != 0){
 	if (*katba != '\n') {
-	    *video_ram = *katba; //on met la lettre ascii dans l'emplacement associé
+	    *video_ram = *katba; //we put the letter ascii in the associated location
 	}
 
 	*video_ram++;
 
-	*video_ram = loun; //on met la valeur de la couleur dans l'emplacement associé
+	*video_ram = loun; //we put the value of the color in the associated slot
 
 	if (*katba != '\n') {
-	    *video_ram++; // on réavance dans la mémoire, l'emplacement alors actuel étant réservé à la couleur
+	    *video_ram++; // we re-advance in the memory, the current location being reserved for the color
 	}
 
 	if (*katba == '\n') {
-	    video_ram += line_count*2 +1; //s'il y a retour à la ligne on avance de sorte à compter tous les emplacements qu'on a laissé vides
+	    video_ram += line_count*2 +1; //if there is a line break, we go ahead to count all the empty slots
 	    line_count = LINE_SIZE;
 	    screen_count--;
 	}
 
-	*katba++; //dans tous les cas, on avance dans la chaîne de caractères
-	line_count--; //(compteur de lettres par ligne)
+	*katba++; //in any case, we advance in the string of characters
+	line_count--; //(letter counter per line)
 
 	if (screen_count == 0) {
-	    //si l'écran est saturé de texte, on l'efface
+	    //if the screen is saturated with text, we erase it
 	    free_vram();
 	    
 	    video_ram = 0xB8000;
@@ -53,7 +53,7 @@ void backline (void)
     video_ram += line_count*2+1;
     line_count = LINE_SIZE;
     screen_count--;
-    //pour revenir à la ligne manuellement, même code que plus haut
+    //to return to the line manually, same code as above
 }
 
 void akteb(char *katba, char loun)
@@ -68,7 +68,7 @@ void akteb(char *katba, char loun)
 
 	*video_ram = loun;
 	*video_ram++;
-	//Même chose que la fonction ktab mais on ne se soucie pas des retours à la ligne
+	//Same as ktab but we do not care about line breaks
 
     }
 }
