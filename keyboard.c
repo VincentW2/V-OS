@@ -8,7 +8,7 @@ unsigned char tawshin()
     } while ((yod & 0x01) == 0);
 
 
-    yod = inp(0x60); //on stock l'input via le port 0x60
+    yod = inp(0x60); //store the input via port 0x60
 
     return yod;
     //Lit l'input du clavier
