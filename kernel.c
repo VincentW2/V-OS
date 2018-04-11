@@ -6,7 +6,7 @@ void main(void) //function loaded first by boot.S
     nextpage();
     
     ktab("BOOTED!\n", 0x03);
-    ktab("Aferfer OS, v0.3\n\n\n", 0x03);
+    ktab("V-OS, v0.1 BETA\n\n\n", 0x03);
    
 
     while(1)
