@@ -4,7 +4,7 @@ ASM = as --32
 LDARCH = elf_i386
 LAZM = vram.o shell.o keyboard.o print.o lsd.o str.o hex.o
 
-ifri.iso : pyralaph.elf
+v-os.iso : pyralaph.elf
 	cp pyralaph.elf iso/boot/alaph.bin
 	grub-mkrescue -o v-os.iso iso
 
