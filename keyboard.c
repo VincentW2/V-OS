@@ -15,16 +15,16 @@ unsigned char tawshin()
 }
 
 
-unsigned char sayen(){ //lit également l'input du clavier, mais tout est mis en pause jusqu'à ce que l'on saisisse quelque chose
+unsigned char sayen(){ //also reads keyboard input, but everything is paused until something is grasped
 
     char het = 0;
     while (1)
     {
-	het = inp(0x60); //on prend l'input du clavier
+	het = inp(0x60); //we take the input of the keyboard
 	if (het > 0){
 	    return het;
 	    het = 0;
-	    break; //on attend un nouvel input
+	    break; //we are waiting for a new input
 	}
     }
 }
