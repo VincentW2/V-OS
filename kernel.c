@@ -1,4 +1,5 @@
-void main(void) //fonction chargée en premier par boot.S
+void main(void) //function loaded first by boot.S
+
 {
     ktab("BOOTING......", '0');
     free_vram();
