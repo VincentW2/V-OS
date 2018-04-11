@@ -6,7 +6,7 @@ LAZM = vram.o shell.o keyboard.o print.o lsd.o str.o hex.o
 
 ifri.iso : pyralaph.elf
 	cp pyralaph.elf iso/boot/alaph.bin
-	grub-mkrescue -o ifri.iso iso
+	grub-mkrescue -o v-os.iso iso
 
 pyralaph.elf : $(LAZM) kernel.o linker.ld boot.elf
 	ld -m $(LDARCH) -T linker.ld kernel.o boot.elf $(LAZM) -o pyralaph.elf
