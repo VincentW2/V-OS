@@ -195,7 +195,7 @@ void shell()
 	
 	if(strcmp(str, "info", 5))
 	{
-	    printf("|d123");
+	    ktab("BOOTED!\n");
 	}
 
 	while (n < 100)
