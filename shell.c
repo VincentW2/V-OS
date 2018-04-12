@@ -13,7 +13,7 @@ void shell()
     
     switch(command[ltr])
     {
-    case 0x1E : ktab("q", loun); str[ltr] = 'q'; ltr++; break;
+    case 0x1E : ktab("a", loun); str[ltr] = 'q'; ltr++; break;
     case 0x30 : ktab("b", loun); str[ltr] = 'b'; ltr++; break;
     case 0x2E : ktab("c", loun); str[ltr] = 'c'; ltr++; break;
     case 0x20 : ktab("d", loun); str[ltr] = 'd'; ltr++; break;
@@ -29,7 +29,7 @@ void shell()
     case 0x31 : ktab("n", loun); str[ltr] = 'n'; ltr++; break;
     case 0x18 : ktab("o", loun); str[ltr] = 'o'; ltr++; break;
     case 0x19 : ktab("p", loun); str[ltr] = 'p'; ltr++; break;
-    case 0x10 : ktab("a", loun); str[ltr] = 'a'; ltr++; break;
+    case 0x10 : ktab("q", loun); str[ltr] = 'q'; ltr++; break;
     case 0x13 : ktab("r", loun); str[ltr] = 'r'; ltr++; break;
     case 0x1F : ktab("s", loun); str[ltr] = 's'; ltr++; break;
     case 0x14 : ktab("t", loun); str[ltr] = 't'; ltr++; break;
