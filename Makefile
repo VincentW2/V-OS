@@ -4,12 +4,12 @@ ASM = as --32
 LDARCH = elf_i386
 LAZM = vram.o shell.o keyboard.o print.o lsd.o str.o hex.o
 
-v-os.iso : pyralaph.elf
-	cp pyralaph.elf iso/boot/alaph.bin
+v-os.iso : v-os.elf
+	cp v-os.elf iso/boot/alaph.bin
 	grub-mkrescue -o v-os.iso iso
 
-pyralaph.elf : $(LAZM) kernel.o linker.ld boot.elf
-	ld -m $(LDARCH) -T linker.ld kernel.o boot.elf $(LAZM) -o pyralaph.elf
+v-os.elf : $(LAZM) kernel.o linker.ld boot.elf
+	ld -m $(LDARCH) -T linker.ld kernel.o boot.elf $(LAZM) -o v-os.elf
 %.o : %.c
 	$(CC) $(CCFLAGS) $<
 boot.elf : boot.S
