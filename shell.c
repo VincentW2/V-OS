@@ -211,6 +211,7 @@ void shell()
 	    info();
 	}
 
+
 	while (n < 100)
 	{
 	    str[n] = 0;
