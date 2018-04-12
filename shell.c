@@ -61,7 +61,7 @@ void shell()
     case 0x1C:
 
 	ktab("\n", 0x07);
-	ktab("gerga3 >", 0x09);
+	ktab("root >", 0x09);
 	int n = 0;
 
 	if (strcmp(str, "mov eax,", 8))
@@ -74,7 +74,7 @@ void shell()
 	    ktab("moved ", 0x05);
 	    ktab(val, 0x05);
 	    ktab(" to EAX register\n", 0x05);
-	    ktab("gerga3 >", 0x09);
+	    ktab("root >", 0x09);
 	}
 
 	if (strcmp(str, "mov ebx,", 8))
@@ -87,7 +87,7 @@ void shell()
 	    ktab("moved ", 0x05);
 	    ktab(val, 0x05);
 	    ktab(" to EBX register\n", 0x05);
-	    ktab("gerga3 >", 0x09);
+	    ktab("root >", 0x09);
 	}
 
 
@@ -101,7 +101,7 @@ void shell()
 	    ktab("moved ", 0x05);
 	    ktab(val, 0x05);
 	    ktab(" to ECX register\n", 0x05);
-	    ktab("gerga3 >", 0x09);
+	    ktab("root >", 0x09);
 	}
 
 	if (strcmp(str, "mov edx,", 8))
@@ -114,7 +114,7 @@ void shell()
 	    ktab("moved ", 0x05);
 	    ktab(val, 0x05);
 	    ktab(" to EDX register\n", 0x05);
-	    ktab("gerga3 >", 0x09);
+	    ktab("root >", 0x09);
 	}
 
 	if (strcmp(str, "mov [", 5))
@@ -167,7 +167,7 @@ void shell()
 
 	    ktab("jumped to ", 0x05);
 	    ktab(val, 0x05);
-	    ktab("gerga3 >", 0x09);
+	    ktab("root >", 0x09);
 	    
 	}
 
@@ -193,7 +193,7 @@ void shell()
 	}
 	  
 	
-	if (strcmp(str, "info", 6))
+	if (strcmp(str, "info"))
 	{
 	    info();
 	}
