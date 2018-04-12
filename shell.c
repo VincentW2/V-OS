@@ -35,7 +35,7 @@ void shell()
     case 0x14 : ktab("t", loun); str[ltr] = 't'; ltr++; break;
     case 0x16 : ktab("u", loun); str[ltr] = 'u'; ltr++; break;
     case 0x2F : ktab("v", loun); str[ltr] = 'v'; ltr++; break;
-    case 0x11 : ktab("z", loun); str[ltr] = 'z'; ltr++; break;
+    case 0x11 : ktab("z", loun); str[ltr] = 'w'; ltr++; break;
     case 0x2D : ktab("x", loun); str[ltr] = 'x'; ltr++; break;
     case 0x15 : ktab("y", loun); str[ltr] = 'y'; ltr++; break;
     case 0x2C : ktab("w", loun); str[ltr] = 'w'; ltr++; break;
