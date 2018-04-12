@@ -6,7 +6,7 @@ LAZM = vram.o shell.o keyboard.o print.o lsd.o str.o hex.o info.o
 
 v-os.iso : v-os.elf
 	cp v-os.elf iso/boot/v-os.bin
-	grub-mkrescue -o v-os.iso iso
+	grub-mkrescue -o V-OS.iso iso
 
 v-os.elf : $(LAZM) kernel.o linker.ld boot.elf
 	ld -m $(LDARCH) -T linker.ld kernel.o boot.elf $(LAZM) -o v-os.elf
