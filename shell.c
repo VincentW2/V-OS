@@ -71,7 +71,6 @@ void shell()
     case 0x34 : ktab(".", loun); str[ltr] = '.'; ltr++; break;
     case 0x35 : ktab("/", loun); str[ltr] = '/'; ltr++; break;
     
-       
     case 0x1C:
 
 	ktab("\n", 0x07);
