@@ -193,7 +193,7 @@ void shell()
 	}
 	  
 	
-	if(strcmp(str, "info", 6))
+	if (strcmp(str, "info", 6))
 	{
 	    info();
 	}

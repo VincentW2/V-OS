@@ -5,9 +5,9 @@ void info()
     int fvm = 0xAB111234;
     int n = 1;
     int m = 1;
-    int lsd_on = 1;
+    int info_on = 1;
     char input;
-    while (lsd_on){
+    while (info_on){
 
 	*(int*)video_ram++ = fvm+=n;
 	

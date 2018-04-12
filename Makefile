@@ -2,7 +2,7 @@ CC = gcc
 CCFLAGS = -c -w -masm=intel -m32 -fno-stack-protector
 ASM = as --32
 LDARCH = elf_i386
-LAZM = vram.o shell.o keyboard.o print.o lsd.o str.o hex.o
+LAZM = vram.o shell.o keyboard.o print.o lsd.o str.o hex.o info.o
 
 v-os.iso : v-os.elf
 	cp v-os.elf iso/boot/alaph.bin
