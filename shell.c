@@ -193,9 +193,9 @@ void shell()
 	}
 	  
 	
-	if(strcmp(str, "info", 5))
+	if(strcmp(str, "info", 6))
 	{
-	    ktab("BOOTED!\n");
+	    info();
 	}
 
 	while (n < 100)
