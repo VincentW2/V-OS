@@ -13,32 +13,33 @@ void shell()
     
     switch(command[ltr])
     {
-    case 0x1E : ktab("a", loun); str[ltr] = 'q'; ltr++; break;
-    case 0x30 : ktab("b", loun); str[ltr] = 'b'; ltr++; break;
-    case 0x2E : ktab("c", loun); str[ltr] = 'c'; ltr++; break;
-    case 0x20 : ktab("d", loun); str[ltr] = 'd'; ltr++; break;
+    case 0x01 : ktab("ESC", loun); str[ltr] = 'ESC'; ltr++; break;
+    case 0x10 : ktab("q", loun); str[ltr] = 'q'; ltr++; break;
+    case 0x11 : ktab("w", loun); str[ltr] = 'w'; ltr++; break;
     case 0x12 : ktab("e", loun); str[ltr] = 'e'; ltr++; break;
-    case 0x21 : ktab("f", loun); str[ltr] = 'f'; ltr++; break;
-    case 0x22 : ktab("g", loun); str[ltr] = 'f'; ltr++; break;
-    case 0x23 : ktab("h", loun); str[ltr] = 'h'; ltr++; break;
+    case 0x13 : ktab("r", loun); str[ltr] = 'r'; ltr++; break;
+    case 0x14 : ktab("t", loun); str[ltr] = 't'; ltr++; break;
+    case 0x15 : ktab("y", loun); str[ltr] = 'y'; ltr++; break;
+    case 0x16 : ktab("u", loun); str[ltr] = 'u'; ltr++; break;
     case 0x17 : ktab("i", loun); str[ltr] = 'i'; ltr++; break;
+    case 0x18 : ktab("o", loun); str[ltr] = 'o'; ltr++; break;
+    case 0x19 : ktab("p", loun); str[ltr] = 'p'; ltr++; break;
+    case 0x1E : ktab("a", loun); str[ltr] = 'a'; ltr++; break;
+    case 0x1F : ktab("s", loun); str[ltr] = 's'; ltr++; break;
+    case 0x20 : ktab("d", loun); str[ltr] = 'd'; ltr++; break;
+    case 0x21 : ktab("f", loun); str[ltr] = 'f'; ltr++; break;
+    case 0x22 : ktab("g", loun); str[ltr] = 'g'; ltr++; break;
+    case 0x23 : ktab("h", loun); str[ltr] = 'h'; ltr++; break;
     case 0x24 : ktab("j", loun); str[ltr] = 'j'; ltr++; break;
     case 0x25 : ktab("k", loun); str[ltr] = 'k'; ltr++; break;
     case 0x26 : ktab("l", loun); str[ltr] = 'l'; ltr++; break;
-    case 0x27 : ktab("m", loun); str[ltr] = 'm'; ltr++; break;
-    case 0x31 : ktab("n", loun); str[ltr] = 'n'; ltr++; break;
-    case 0x18 : ktab("o", loun); str[ltr] = 'o'; ltr++; break;
-    case 0x19 : ktab("p", loun); str[ltr] = 'p'; ltr++; break;
-    case 0x10 : ktab("q", loun); str[ltr] = 'q'; ltr++; break;
-    case 0x13 : ktab("r", loun); str[ltr] = 'r'; ltr++; break;
-    case 0x1F : ktab("s", loun); str[ltr] = 's'; ltr++; break;
-    case 0x14 : ktab("t", loun); str[ltr] = 't'; ltr++; break;
-    case 0x16 : ktab("u", loun); str[ltr] = 'u'; ltr++; break;
-    case 0x2F : ktab("v", loun); str[ltr] = 'v'; ltr++; break;
-    case 0x11 : ktab("z", loun); str[ltr] = 'z'; ltr++; break;
+    case 0x2C : ktab("z", loun); str[ltr] = 'z'; ltr++; break;
     case 0x2D : ktab("x", loun); str[ltr] = 'x'; ltr++; break;
-    case 0x15 : ktab("y", loun); str[ltr] = 'y'; ltr++; break;
-    case 0x2C : ktab("w", loun); str[ltr] = 'w'; ltr++; break;
+    case 0x2E : ktab("c", loun); str[ltr] = 'c'; ltr++; break;
+    case 0x2F : ktab("v", loun); str[ltr] = 'v'; ltr++; break;
+    case 0x30 : ktab("b", loun); str[ltr] = 'b'; ltr++; break;
+    case 0x31 : ktab("n", loun); str[ltr] = 'n'; ltr++; break;
+    case 0x32 : ktab("m", loun); str[ltr] = 'm'; ltr++; break;
     case 0x39 : ktab(" ", loun); str[ltr] = ' '; ltr++; break;
 
     case 0x02 : ktab("1", loun); str[ltr] = '1'; ltr++; break;
@@ -51,12 +52,25 @@ void shell()
     case 0x09 : ktab("8", loun); str[ltr] = '8'; ltr++; break;
     case 0x0A : ktab("9", loun); str[ltr] = '9'; ltr++; break;
     case 0x0B : ktab("0", loun); str[ltr] = '0'; ltr++; break;
-    case 0x32 : ktab(",", loun); str[ltr] = ','; ltr++; break;
-	
-    case 0x3B : ktab("[", loun); str[ltr] = '['; ltr++; break;
-    case 0x44 : ktab("]", loun); str[ltr] = ']'; ltr++; break;
-	
+    case 0x0C : ktab("-", loun); str[ltr] = '-'; ltr++; break;
+    case 0x0D : ktab("+", loun); str[ltr] = '+'; ltr++; break;
+    case 0x0E : ktab("Backspace", loun); str[ltr] = "Backspace"; ltr++; break;
+    case 0x0F : ktab("Tab", loun); str[ltr] = "Tab"; ltr++; break;
+    case 0x1D : ktab("LCtrl", loun); str[ltr] = "LCtrl"; ltr++; break;
+    case 0x2A : ktab("LShift", loun); str[ltr] = "LShift"; ltr++; break;
+    case 0x36 : ktab("RShift", loun); str[ltr] = "RShift"; ltr++; break;
+    case 0x38 : ktab("LAlt", loun); str[ltr] = "LAlt"; ltr++; break;
+    case 0x37 : ktab("Keypad *", loun); str[ltr] = "Keypad *"; ltr++; break;
 
+    case 0x1A : ktab("[", loun); str[ltr] = '['; ltr++; break;
+    case 0x1B : ktab("]", loun); str[ltr] = ']'; ltr++; break;
+    case 0x27 : ktab(";", loun); str[ltr] = ';'; ltr++; break;
+    case 0x28 : ktab("'", loun); str[ltr] = "'"; ltr++; break;
+    case 0x29 : ktab("`", loun); str[ltr] = '`'; ltr++; break;
+    case 0x33 : ktab(",", loun); str[ltr] = ','; ltr++; break;
+    case 0x34 : ktab(".", loun); str[ltr] = '.'; ltr++; break;
+    case 0x35 : ktab("/", loun); str[ltr] = '/'; ltr++; break;
+    
        
     case 0x1C:
 

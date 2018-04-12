@@ -6,10 +6,8 @@ void main(void) //function loaded first by boot.S
     nextpage();
     
     ktab("BOOTED!\n", 0x03);
-    ktab("V-OS, v0.3 BETA\n\n", 0x03);
-    ktab("Changelog\n\n", 0x03);
-    ktab("4/11/2018 - Added Info.c\n\n", 0x03);
-   
+    ktab("V-OS, v1.0 BETA\n", 0x03);
+    ktab("Do "info" for information on the Operating System!\n\n", 0x03);
 
     while(1)
     {
