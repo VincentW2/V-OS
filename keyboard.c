@@ -11,7 +11,7 @@ unsigned char tawshin()
     yod = inp(0x60); //store the input via port 0x60
 
     return yod;
-    //Lit l'input du clavier
+    //Read the input of the keyboard
 }
 
 
