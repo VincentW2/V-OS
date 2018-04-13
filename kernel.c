@@ -1,14 +1,14 @@
 void main(void) //function loaded first by boot.S
 
 {
-    ktab("BOOTING......", '0');
+    vprint("BOOTING......", '0');
     free_vram();
     nextpage();
     
-    ktab("BOOTED!\n", 0x03);
-    ktab("V-OS, v1.0 BETA\n", 0x03);
-    ktab("Do ""info"" for information on the Operating System!\n", 0x03);
-    ktab("Do ""help"" for list of commands\n", 0x03);
+    vprint("BOOTED!\n", 0x03);
+    vprint("V-OS, v1.0 BETA\n", 0x03);
+    vprint("Do ""info"" for information on the Operating System!\n", 0x03);
+    vprint("Do ""help"" for list of commands\n", 0x03);
 
     while(1)
     {

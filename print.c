@@ -1,4 +1,4 @@
-#define SCREEN_LINES 25
+#define SCREEN_LINES 80
 #define LINE_SIZE 80
 
 char *video_ram = (char*)0xB8000;
@@ -6,7 +6,7 @@ char *video_ram = (char*)0xB8000;
 int screen_count = SCREEN_LINES;
 int line_count = LINE_SIZE;
 
-void ktab(char *katba, char loun)
+void vprint(char *katba, char loun)
 {
 
     while (*katba != 0){
@@ -68,7 +68,7 @@ void akteb(char *katba, char loun)
 
 	*video_ram = loun;
 	*video_ram++;
-	//Same as ktab but we do not care about line breaks
+	//Same as vprint but we do not care about line breaks
 
     }
 }
@@ -78,7 +78,7 @@ void nextpage()
     int l = 0;
     while (l < SCREEN_LINES)
     {
-	ktab("\n", 0);
+	vprint("\n", 0);
 	l++;
     }
 }

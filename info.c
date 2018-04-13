@@ -1,13 +1,13 @@
 void info()
 {
-    ktab("\n");
-    ktab("Info About V-OS\n");
-    ktab("V-OS, v1.0 BETA\n");
-    ktab("Codename ""Typist""\n\n");
-    ktab("Changelog\n");
-    ktab("4/11/2018 - Added Info.c\n");
-    ktab("4/11/2018 - Fixed Keyboard Input\n\n");
-    ktab("Credits\n");
-    ktab("Original Code By Pyrmalthakon\n");
-    ktab("Rebranding, Translation, and Features In Changelog by VinLark\n");
+    vprint("\n");
+    vprint("Info About V-OS\n");
+    vprint("V-OS, v1.0 BETA\n");
+    vprint("Codename ""Typist""\n\n");
+    vprint("Changelog\n");
+    vprint("4/11/2018 - Added Info.c\n");
+    vprint("4/11/2018 - Fixed Keyboard Input\n\n");
+    vprint("Credits\n");
+    vprint("Original Code By Pyrmalthakon\n");
+    vprint("Rebranding, Translation, and Features In Changelog by VinLark\n");
 }
