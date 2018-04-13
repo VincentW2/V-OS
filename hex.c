@@ -1,4 +1,4 @@
-unsigned int tohex(char *str)
+  unsigned int tohex(char *str)
 {
   unsigned int hex;
   while (*str != 0)

@@ -1,4 +1,4 @@
-#define SCREEN_LINES 80
+#define SCREEN_LINES 30
 #define LINE_SIZE 80
 
 char *video_ram = (char*)0xB8000;
