@@ -2,6 +2,9 @@
 
 A small OS made in C. 
 
-Improvments I've made to it 
+Improvements I've made to it 
 
-- Coming Soon
+- Added keyboard support
+- Translations from French to English
+- Added Changelog
+- Added Info command 
