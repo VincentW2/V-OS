@@ -6,7 +6,7 @@ void main(void) //function loaded first by boot.S
     nextpage();
     
     vprint("BOOTED!\n", 0x03);
-    vprint("V-OS, v1.0 BETA\n", 0x03);
+    vprint("V-OS, v1.1 BETA\n", 0x03);
     vprint("Do ""info"" for information on the Operating System!\n", 0x03);
     vprint("Do ""help"" for list of commands\n", 0x03);
 
