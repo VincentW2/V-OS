@@ -214,7 +214,12 @@ void shell()
 	if (strcmp(str, "help"))
 	{
 		help();
-	}	
+	}
+		    
+	if (strcmp(str, "changelog"))
+	{
+		changelog();
+	}
 
 	while (n < 100)
 	{
