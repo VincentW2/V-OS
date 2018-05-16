@@ -7,4 +7,5 @@ Improvements I've made to it
 - Added keyboard support
 - Translations from French to English
 - Added Changelog
-- Added Info command 
+- Added Info Command 
+- Added Help Command
