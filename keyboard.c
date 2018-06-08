@@ -28,3 +28,20 @@ unsigned char sayen(){ //also reads keyboard input, but everything is paused unt
 	}
     }
 }
+
+
+unsigned char logman()
+{
+
+    unsigned char yod;
+    do {
+    yod = inp(0x64);
+
+    } while ((yod & 0x01) == 0);
+
+
+    yod = inp(0x60); //store the input via port 0x60
+
+    return yod;
+    //Read the input of the keyboard
+}

@@ -6,7 +6,6 @@ void shell()
 {
     char loun = 0xF;
     char command[100];
-
     char output[100];
    
     command[ltr] = tawshin();
