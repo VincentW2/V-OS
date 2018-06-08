@@ -5,9 +5,8 @@ void main(void) //function loaded first by boot.S
     free_vram();
     nextpage();
     
-    vprint("BOOTED!\n", 0x03);
-    vprint("V-OS, v1.3.1 BETA\n", 0x03);
-    vprint("Do ""help"" for list of commands\n", 0x03);
+    vprint("V-OS, v1.4 BETA\n", 0x04);
+    vprint("Do 'help' for list of commands\n");
 
     while(1)
     {

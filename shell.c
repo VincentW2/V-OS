@@ -74,7 +74,7 @@ void shell()
     case 0x1C:
 
 	vprint("\n", 0x07);
-	vprint("root >", 0x09);
+	vprint("root>", 0x12);
 	int n = 0;
 
 	if (strcmp(str, "mov eax,", 8))

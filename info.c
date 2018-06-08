@@ -1,9 +1,8 @@
 void info()
 {
-    vprint("\n");
-    vprint("Info About V-OS\n");
-    vprint("V-OS, v1.3.1 BETA\n");
-    vprint("Credits\n");
-    vprint("Original Code By Pyrmalthakon\n");
-    vprint("Rebranding, Translation, and Additional Features by VinLark\n");
+    vprint("Info About V-OS\n", 0x04);
+    vprint("V-OS, v1.4 BETA\n", 0x02);
+    vprint("Credits:\n", 0x02);
+    vprint("Original Code By Pyrmalthakon\n", 0x02);
+    vprint("Rebranding, Translation, and Additional Features by VinLark", 0x02);
 }
