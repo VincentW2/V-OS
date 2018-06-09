@@ -73,7 +73,7 @@ void login()
     case 0x1C:
 
 	vprint("\n", 0x07);
-	vprint("root>", 0x12);
+	vprint("login>", 0x12);
 	int n = 0;
 
 	if (strcmp(sta, "mov eax,", 8))
@@ -218,6 +218,11 @@ void login()
 	if (strcmp(sta, "changelog"))
 	{
 		changelog();
+	}
+
+	if (strcmp(sta, "root"))
+	{
+		pass();
 	}
 
 	while (n < 100)

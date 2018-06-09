@@ -5,8 +5,9 @@ void main(void) //function loaded first by boot.S
     free_vram();
     nextpage();
     
-    vprint("V-OS, v1.4 BETA\n", 0x04);
-    vprint("Do 'help' for list of commands\n");
+    vprint("____________________________", 0x11);
+    vprint("PRESS ENTER FOR LOGIN SCREEN", 0x12);
+    vprint("________________________",0x11);
 
     while(1)
     {

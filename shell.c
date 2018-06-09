@@ -1,9 +1,9 @@
+	int ltr = 0;
+	char str[100] = "";
 
-int ltr = 0;
-char str[100] = "";
-
-void shell()
+void shell(void)
 {
+    
     char loun = 0xF;
     char command[100];
     char output[100];
