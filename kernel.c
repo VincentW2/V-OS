@@ -5,12 +5,11 @@ void main(void) //function loaded first by boot.S
     free_vram();
     nextpage();
     
-    vprint("____________________________", 0x11);
-    vprint("PRESS ENTER FOR LOGIN SCREEN", 0x12);
-    vprint("________________________",0x11);
+    vprint("Welcome to V-OS v2.0 RC1\n", 0x04);
+    vprint("Type in """"help"""" for list of commands");
 
     while(1)
     {
-	login();
+	shell();
     }
 }
