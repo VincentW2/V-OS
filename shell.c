@@ -217,19 +217,7 @@ void shell(void)
 		    
 	if (strcmp(str, "changelog"))
 	{
-		vprint("Changelog Page 1 2.X Updates\n", 0x04);
-		vprint("Type 'Changelog 2' for Page 2 of Changelog");
-	}
-
-	if (strcmp(str, "changelog 2"))
-	{
-		vprint("Changelog Page 2 1.X Updates\n", 0x04);
-  		vprint("6/7/2018 - Made text more readable by changing color.\n", 0x02);
-  		vprint("6/6/2018 -  Fixed shell line overflow and implemented new bootloader\n", 0x02);
-  		vprint("5/16/2018 - Added Changelog\n", 0x02);
-  		vprint("5/12/2018 - Added New Bootloader\n", 0x02);
-  		vprint("4/11/2018 - Added Info.c\n", 0x02);
-		vprint("4/11/2018 - Fixed Keyboard Input\n", 0x02);
+		changelog();
 	}
 
 	while (n < 100)
