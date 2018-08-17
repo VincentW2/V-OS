@@ -5,11 +5,12 @@ void main(void) //function loaded first by boot.S
     free_vram();
     nextpage();
     
-    vprint("V-OS, v1.4 BETA\n", 0x04);
-    vprint("Do 'help' for list of commands\n");
+    vprint("Welcome to V-OS v2.0 Setup\n", 0x04);
+    vprint("Please Select Language\n");
+    vprint("To see avalible Languages, type in 'help'");
 
     while(1)
     {
-	shell();
+	setup();
     }
 }

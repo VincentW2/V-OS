@@ -32,6 +32,24 @@ int strcmp(char *str1, char *str2, int len)
     return nefs;
 }
 
+int latinstrcmp(char *str1, char *str2, int len)
+{
+    int nefs = 1;
+    int count = 0;
+
+    while (count < len)
+    {
+    if (str1[count] != str2[count])
+    {
+        nefs = 0;
+    }
+
+    count++;
+    }
+
+    return nefs;
+}
+
 void strpart(char *str, int start, int end, char *output)
 {
     int s = start-1;
@@ -76,6 +94,39 @@ void strqsm(char *str, int word, char *output)
 
     output[count2-1] = '\0';
 }
+
+void latinstrqsm(char *str, int word, char *output)
+{
+    int count = 0;
+
+    int w = word-1;
+    int count2 = 0;
+
+    while (count < w)
+    {
+    *str++;
+    if (*str == ' ')
+    {
+        count++;
+    }
+    }
+
+    while (count < w+1)
+    {
+
+    *str++;
+    output[count2] = *str;
+
+    count2++;
+    if (*str == ' ')
+    {
+        count++;
+    }
+    }
+
+    output[count2-1] = '\0';
+}
+
 
 int toint(char str[]) {
     int ch;

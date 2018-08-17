@@ -1,12 +1,11 @@
+	int ltr = 0;
+	char str[100] = "";
 
-int ltr = 0;
-char str[100] = "";
-
-void shell()
+void engshell(void)
 {
+
     char loun = 0xF;
     char command[100];
-
     char output[100];
    
     command[ltr] = tawshin();
@@ -76,7 +75,7 @@ void shell()
 	vprint("\n", 0x07);
 	vprint("root>", 0x12);
 	int n = 0;
-
+	
 	if (strcmp(str, "mov eax,", 8))
 	{
 	    char val[100];
