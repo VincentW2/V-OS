@@ -8,7 +8,7 @@ void setup(void)
     char command[100];
     char output[100];
    
-    command[setupltr] = tawshin();
+    command[setupltr] = logman();
     
     switch(command[setupltr])
     {
