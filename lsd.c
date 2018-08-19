@@ -1,7 +1,7 @@
 void lsd()
 {
     
-    int video_ram = 0xB8000;
+    int video_ram = 0xAA000;
     int fvm = 0xAB111234;
     int n = 1;
     int m = 1;

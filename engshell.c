@@ -8,7 +8,7 @@ void engshell(void)
     char command[100];
     char output[100];
    
-    command[ltr] = tawshin();
+    command[ltr] = logman();
     
     switch(command[ltr])
     {
@@ -73,7 +73,7 @@ void engshell(void)
     case 0x1C:
 
 	vprint("\n", 0x07);
-	vprint("root>", 0x12);
+	vprint("English~$ ", 0x04);
 	int n = 0;
 	
 	if (strcmp(str, "mov eax,", 8))
@@ -167,6 +167,23 @@ void engshell(void)
 	}
 
 	if (strcmp(str, "jmp", 3))
+	{
+	    char val[100];
+	    int src;
+	    strqsm(str, 2, val);
+	    src = tohex(val);
+
+	    __asm__("jmp %[src]" : : [src]"r"(src));
+      
+
+
+	    vprint("jumped to ", 0x05);
+	    vprint(val, 0x05);
+	    vprint("root >", 0x09);
+	    
+	}
+
+	if (strcmp(str, "reboot", 3))
 	{
 	    char val[100];
 	    int src;

@@ -73,7 +73,7 @@ void setup(void)
     case 0x1C:
 
 	vprint("\n", 0x07);
-	vprint("SETUP>", 0x12);
+	vprint("Setup~$ ", 0x05);
 	int n = 0;
 
 	
@@ -114,6 +114,24 @@ void setup(void)
 	    
 	}
 
+	if (strcmp(setupstr, "reboot", 3))
+	{
+	    char val[100];
+	    int src;
+	    strqsm(setupstr, 2, val);
+	    src = tohex(val);
+
+	    __asm__("jmp %[src]" : : [src]"r"(src));
+      
+
+
+	    vprint("jumped to ", 0x05);
+	    vprint(val, 0x05);
+	    vprint("root >", 0x09);
+	    
+	}
+
+
 	if (strcmp(setupstr, "exec", 4))
 	  {
 	    unsigned int code;
@@ -130,7 +148,6 @@ void setup(void)
 	{
 	    free_vram();
 	}
-	  
 	
 	if (strcmp(setupstr, "info"))
 	{
@@ -146,7 +163,7 @@ void setup(void)
 	{
 		free_vram();
 		nextpage();
-		vprint("Welcome to V-OS v2.0 English Mode!\n", 0x04);
+		vprint("Welcome to V-OS v2.0 English Mode!\n", 0x07);
 		vprint("Type 'help' for list of commands");
 		while(1)
 		{	
@@ -158,13 +175,14 @@ void setup(void)
 	{
 		free_vram();
 		nextpage();
-		vprint("Gratus est V-OS Latina modus!\n", 0x04);
+		vprint("Gratus est V-OS Latina modus!\n", 0x07);
 		vprint("Genus 'auxilium' quia album autem imperium");
 		while(1)
 		{
 		latinshell();
 		}
-	}	
+	}
+
 
 	while (n < 100)
 	{

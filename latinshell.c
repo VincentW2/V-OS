@@ -8,7 +8,7 @@ void latinshell(void)
     char command[100];
     char output[100];
    
-    command[latinltr] = tawshin();
+    command[latinltr] = logman();
     
     switch(command[latinltr])
     {
@@ -73,7 +73,7 @@ void latinshell(void)
     case 0x1C:
 
 	vprint("\n", 0x07);
-	vprint("root>", 0x12);
+	vprint("Latin~$ ", 0x06);
 	int n = 0;
 	
 	if (latinstrcmp(latinstr, "mov eax,", 8))
@@ -171,6 +171,23 @@ void latinshell(void)
 	    char val[100];
 	    int src;
 	    latinstrqsm(latinstr, 2, val);
+	    src = tohex(val);
+
+	    __asm__("jmp %[src]" : : [src]"r"(src));
+      
+
+
+	    vprint("jumped to ", 0x05);
+	    vprint(val, 0x05);
+	    vprint("root >", 0x09);
+	    
+	}
+
+	if (strcmp(latinstr, "reboot", 3))
+	{
+	    char val[100];
+	    int src;
+	    strqsm(latinstr, 2, val);
 	    src = tohex(val);
 
 	    __asm__("jmp %[src]" : : [src]"r"(src));
