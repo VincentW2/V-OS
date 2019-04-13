@@ -53,7 +53,7 @@ void engshell(void)
     case 0x0B : vprint("0", loun); str[ltr] = '0'; ltr++; break;
     case 0x0C : vprint("-", loun); str[ltr] = '-'; ltr++; break;
     case 0x0D : vprint("+", loun); str[ltr] = '+'; ltr++; break;
-    case 0x0E : vprint("Backspace", loun); str[ltr] = "Backspace"; ltr++; break;
+    case 0x0E : vprint("\0x8", loun); str[ltr] = "Backspace"; ltr++; break;
     case 0x0F : vprint("Tab", loun); str[ltr] = "Tab"; ltr++; break;
     case 0x1D : vprint("LCtrl", loun); str[ltr] = "LCtrl"; ltr++; break;
     case 0x2A : vprint("LShift", loun); str[ltr] = "LShift"; ltr++; break;
@@ -73,7 +73,7 @@ void engshell(void)
     case 0x1C:
 
 	vprint("\n", 0x07);
-	vprint("English~$ ", 0x04);
+	vprint("V-OS~$ ", 0x04);
 	int n = 0;
 	
 	if (strcmp(str, "mov eax,", 8))
@@ -236,6 +236,20 @@ void engshell(void)
 	{
 		changelog();
 	}
+
+	if (strcmp(str, "latin"))
+	{
+		free_vram();
+		nextpage();
+		vprint("Gratus est V-OS Latina modus!\n", 0x07);
+		vprint("Genus 'auxilium' quia album autem imperium");
+		while(1)
+		{
+		latinshell();
+		}
+	}
+
+
 
 	while (n < 100)
 	{
