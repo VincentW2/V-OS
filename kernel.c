@@ -11,6 +11,6 @@ void main(void) //function loaded first by boot.S
 
     while(1)
     {
-	setup();
+	engshell();
     }
 }
