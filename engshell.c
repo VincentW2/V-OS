@@ -237,19 +237,6 @@ void engshell(void)
 		changelog();
 	}
 
-	if (strcmp(str, "latin"))
-	{
-		free_vram();
-		nextpage();
-		vprint("Gratus est V-OS Latina modus!\n", 0x07);
-		vprint("Genus 'auxilium' quia album autem imperium");
-		while(1)
-		{
-		latinshell();
-		}
-	}
-
-
 
 	while (n < 100)
 	{
