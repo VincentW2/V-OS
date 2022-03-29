@@ -6,6 +6,7 @@ Dependencies:
 - qemu
 - gcc
 - make
+- xorriso
 
 
 How to Run:
